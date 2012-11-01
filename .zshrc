@@ -15,7 +15,7 @@ ZSH_THEME="smt"
 alias ga='git add'
 alias gad='git add .'
 alias gc='git commit'
-alias gp='git push'
+alias gpo='git push origin master'
 alias gl='git log --decorate --graph --oneline'
 alias gs='git status'
 alias gd='git diff'
@@ -25,6 +25,7 @@ alias gwc='git whatchanged -p --abbrev-commit --pretty=medium'
 
 # other aliases
 alias y='yeoman'
+alias yupdate="cd ~/nodejs/yeoman && git pull --rebase origin master && cd cli && sudo npm link"
 alias cal='cal | sed "s/.*/ & /;s/ $(date +%e) / ♥  /"'
 
 # Set to this to use case-sensitive completion
@@ -40,7 +41,7 @@ DISABLE_LS_COLORS="true"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -54,5 +55,5 @@ function precmd () {
   _z --add "$(pwd -P)"
 }
 
-# Customize to your needs...
-export PATH=/Users/admin/.rvm/gems/ruby-1.9.3-p194@rails327/bin:/Users/admin/.rvm/gems/ruby-1.9.3-p194@global/bin:/Users/admin/.rvm/rubies/ruby-1.9.3-p194/bin:/Users/admin/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin
+#Customize to your needs...
+export PATH=/usr/local/bin:/usr/local/share/npm/bin:/Users/admin/.rvm/gems/ruby-1.9.3-p194@rails327/bin:/Users/admin/.rvm/gems/ruby-1.9.3-p194@global/bin:/Users/admin/.rvm/rubies/ruby-1.9.3-p194/bin:/Users/admin/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
