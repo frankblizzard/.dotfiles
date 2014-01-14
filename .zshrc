@@ -8,11 +8,12 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="smt"
 
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+alias zshconfig="subl ~/.zshrc"
+alias ohmyzsh="subl ~/.oh-my-zsh"
 
 # git aliases
 alias ga='git add'
+alias pull='git pull origin master'
 alias gad='git add .'
 alias gc='git commit'
 alias gpo='git push origin master'
@@ -22,11 +23,11 @@ alias gd='git diff'
 alias gdc='git diff --cached'
 alias g='git'
 alias gwc='git whatchanged -p --abbrev-commit --pretty=medium'
+alias gown='git config user.name "tmaximini" && git config user.email "tmaximini@gmail.com"'
 
 # other aliases
-alias y='yeoman'
-alias yupdate="cd ~/nodejs/yeoman && git pull --rebase origin master && cd cli && sudo npm link"
 alias cal='cal | sed "s/.*/ & /;s/ $(date +%e) / ♥  /"'
+alias e='subl . &'
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
