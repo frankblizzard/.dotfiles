@@ -87,16 +87,7 @@ source $ZSH/oh-my-zsh.sh
 # activate Z
 . ~/tools/z.sh
 
-# alias
-alias gs='git status'
-alias diff='git diff'
-alias pull='git pull'
-alias gad='git add .'
-alias gc='git commit'
-alias gm='git checkout master'
-alias gb='git checkout -b'
-alias gco='git checkout'
-alias gpo='git push origin master'
+source ~/.aliases
 
 
 export NVM_DIR="/Users/tmaximini/.nvm"
