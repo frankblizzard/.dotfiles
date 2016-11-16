@@ -1,9 +1,11 @@
 {
-	"color_scheme": "Packages/Railscasts Extended/Railscasts Extended.tmTheme",
+	"caret_style": "solid",
+	"color_scheme": "Packages/Oceanic Next Color Scheme/Oceanic Next.tmTheme",
 	"folder_exclude_patterns":
 	[
 		".git",
-		".sass-cache"
+		".sass-cache",
+		"node_modules"
 	],
 	"font_face": "Monaco",
 	"font_options":
@@ -17,7 +19,11 @@
 	[
 		"Vintage"
 	],
+	"line_padding_bottom": 1,
+	"line_padding_top": 1,
 	"tab_size": 2,
+	"theme": "Cobalt2.sublime-theme",
 	"translate_tabs_to_spaces": true,
-	"trim_trailing_white_space_on_save": true
+	"trim_trailing_white_space_on_save": true,
+	"wide_caret": true
 }
