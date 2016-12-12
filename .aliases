@@ -26,6 +26,9 @@ alias gb='git checkout -b'
 alias gco='git checkout'
 alias gpo='git push origin master'
 
+# curl helpers
+alias curlpost='curl -H "Content-Type: application/json" -X POST -d'
+
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
   colorflag="--color"
@@ -113,3 +116,7 @@ alias reload="exec $SHELL -l"
 
 # Print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'
+
+# Docker
+alias dockerip="docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}'"
+alias dc="docker-compose"
