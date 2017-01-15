@@ -15,10 +15,9 @@ alias dt="cd ~/Desktop"
 alias p="cd ~/projects"
 
 # git stuff
-alias g='git'
 alias gs='git status'
-alias diff='git diff'
-alias pull='git pull'
+alias diff='git diff --color | diff-so-fancy' # npm i -g diff-so-fancy
+alias pull='git pull origin master'
 alias gad='git add .'
 alias gc='git commit'
 alias gm='git checkout master'
@@ -118,6 +117,9 @@ alias reload="exec $SHELL -l"
 alias path='echo -e ${PATH//:/\\n}'
 
 alias rn='react-native'
+
+# now
+alias now-cleanup='now rm $(now-no-alias | json -a uid)'
 
 # Docker
 alias dockerip="docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}'"
