@@ -11,6 +11,19 @@ elif infocmp xterm-256color >/dev/null 2>&1; then
   export TERM='xterm-256color';
 fi;
 
+minutes_since_last_commit() {
+    now=`date +%s`
+    last_commit=`git log --pretty=format:'%at' -1`
+    seconds_since_last_commit=$((now-last_commit))
+    minutes_since_last_commit=$((seconds_since_last_commit/60))
+    hours_since_last_commit=$((minutes_since_last_commit/60))
+    days_since_last_commit=$((hours_since_last_commit/24))
+
+    time_since_last_commit="$((days_since_last_commit))d $((hours_since_last_commit%24))h $((minutes_since_last_commit%60))m"
+
+    echo $time_since_last_commit
+}
+
 prompt_git() {
   local s='';
   local branchName='';
@@ -46,6 +59,10 @@ prompt_git() {
 
     fi;
 
+    local MINUTES_SINCE_LAST_COMMIT=`minutes_since_last_commit`
+    local COLOR=${GREEN}
+    local SINCE_LAST_COMMIT="${COLOR}$(minutes_since_last_commit)${NORMAL}"
+
     # Get the short symbolic ref.
     # If HEAD isn’t a symbolic ref, get the short SHA for the latest commit
     # Otherwise, just give up.
@@ -55,7 +72,7 @@ prompt_git() {
 
     [ -n "${s}" ] && s=" [${s}]";
 
-    echo -e "${1}${branchName}${2}${s}";
+    echo -e "${1}${branchName}${2}${s} ${SINCE_LAST_COMMIT}";
   else
     return;
   fi;
