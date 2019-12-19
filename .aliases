@@ -25,6 +25,10 @@ alias gb='git checkout -b'
 alias gco='git checkout'
 alias gpo='git push origin master'
 
+# python
+alias py='python3'
+alias python='python3'
+
 # curl helpers
 alias curlpost='curl -H "Content-Type: application/json" -X POST -d'
 
